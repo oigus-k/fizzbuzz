@@ -1,27 +1,26 @@
 <?php
 class FizzBuzz
 {
+    const FIZZ = "Fizz";
+    const BUZZ = "Buzz";
+    
     public function inputNum() {
         $input = fgets(STDIN, 4096);
         return $input;
     }
 
     public function judgeFizzBuzz($num) {
-        $strdata = [];
+        $data = [];
         if($num%3 == 0){
-            $strdata[] = "Fizz";
+            $data[] = self::FIZZ;
         }
         if($num%5 == 0){
-            $strdata[] = "Buzz";
+            $data[] = self::BUZZ;
         }
-        if(!in_array("Fizz", $strdata) && !in_array("Buzz", $strdata)){
-            $numdata = $num;
+        if(empty($data)){
+            return $num;
         }
-        if(in_array("Fizz", $strdata) && in_array("Buzz", $strdata)){
-            $strdata[] = implode("", $strdata);
-        }
-        if(!empty($strdata)){ return array_pop($strdata);}
-        else { return $numdata; }
+        return implode("", $data);
     }
 
     public function dispResult() {
@@ -35,4 +34,4 @@ class FizzBuzz
 
 $fizzbuzz = new FizzBuzz();
 $fizzbuzz->dispResult();
-?>
+

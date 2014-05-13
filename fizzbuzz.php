@@ -7,19 +7,22 @@ class FizzBuzz
     }
 
     public function judgeFizzBuzz($num) {
-        $result = [];
+        $strdata = [];
         if($num%3 == 0){
-            $result[] = "Fizz";
+            $strdata[] = "Fizz";
         }
         if($num%5 == 0){
-            $result[] = "Buzz";
+            $strdata[] = "Buzz";
         }
-        if(!in_array("Fizz", $result) && !in_array("Buzz", $result)){
-            $result[] = $num;
+        if(!in_array("Fizz", $strdata) && !in_array("Buzz", $strdata)){
+            $numdata = $num;
         }
-        if(in_array("Fizz", $result) && in_array("Buzz", $result)){
+        if(in_array("Fizz", $strdata) && in_array("Buzz", $strdata)){
             return "FizzBuzz";
-        } else {return $result[0];}
+        }
+        elseif(in_array("Fizz", $strdata) || in_array("Buzz", $strdata)){
+            return $strdata[0];
+        } else { return $numdata; }
     }
 
     public function dispResult() {

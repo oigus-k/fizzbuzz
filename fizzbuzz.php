@@ -18,11 +18,10 @@ class FizzBuzz
             $numdata = $num;
         }
         if(in_array("Fizz", $strdata) && in_array("Buzz", $strdata)){
-            return "FizzBuzz";
+            $strdata[] = implode("", $strdata);
         }
-        elseif(in_array("Fizz", $strdata) || in_array("Buzz", $strdata)){
-            return $strdata[0];
-        } else { return $numdata; }
+        if(!empty($strdata)){ return array_pop($strdata);}
+        else { return $numdata; }
     }
 
     public function dispResult() {

@@ -1,7 +1,6 @@
 <?php
 
-define('__DIR__', '~/sandbox/fizzbuzz');
-require_once __DIR__ . '/fizzbuzz.php';
+require_once 'fizzbuzz.php';
 
 function inputNum() {
     $input = fgets(STDIN, 4096);
